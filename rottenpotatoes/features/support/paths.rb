@@ -21,9 +21,9 @@ module NavigationHelpers
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
 
-    when /^edit page for "(.*)"$/
+    when /^the edit page for "(.*)"$/
       movie_name = $1
-      edit_movie_path()
+      edit_movie_path(Movie.find_by(:title => movie_name))
 
     else
       begin
