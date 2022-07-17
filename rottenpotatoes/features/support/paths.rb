@@ -24,6 +24,9 @@ module NavigationHelpers
     # when /^page for "(.*)"$/
     #   movie_name = $1
     #   movie_path()
+      
+    when /the home page/
+      movies_path
 
     when /^the edit page for "([^"]*)"$/i
       movie_name = Movie.find_by_title($1)
