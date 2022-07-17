@@ -21,9 +21,13 @@ module NavigationHelpers
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
 
-    when /^edit page for "(.*)"$/
-      movie_name = $1
-      edit_movie_path()
+    # when /^page for "(.*)"$/
+    #   movie_name = $1
+    #   movie_path()
+
+    when /^the edit page for "([^"]*)"$/i
+      movie_name = Movie.find_by_title($1)
+      edit_movie_path(movie_name.id)
 
     else
       begin
