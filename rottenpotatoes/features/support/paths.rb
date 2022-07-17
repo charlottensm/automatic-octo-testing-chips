@@ -28,6 +28,7 @@ module NavigationHelpers
     when /^the edit page for "([^"]*)"$/i
       movie_name = Movie.find_by_title($1)
       edit_movie_path(movie_name.id)
+    end 
 
     else
       begin
