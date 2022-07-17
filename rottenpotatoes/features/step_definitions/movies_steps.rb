@@ -27,10 +27,10 @@ end
 Then /the director of "(.*)" should be "(.*)"/ do |movie, director|
   movie_name = Movie.find_by_title(movie)
   visit movie_path(movie_name.id)
-  print movie, director
   expect(page.text).to match(/Directed by:\s#{director}/m)
 end
 
 # When /I go to the edit page for (.*)/ do |movie|
 #   redirect_to(movie_path(movie))
 # end 
+

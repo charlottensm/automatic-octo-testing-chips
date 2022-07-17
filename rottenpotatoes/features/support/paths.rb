@@ -28,7 +28,17 @@ module NavigationHelpers
     when /^the edit page for "([^"]*)"$/i
       movie_name = Movie.find_by_title($1)
       edit_movie_path(movie_name.id)
-    end 
+
+    when /^the details page for "([^"]*)"$/i
+      movie_name = Movie.find_by_title($1)
+      movie_path(movie_name.id)
+    
+    when /^the Similar Movies page for "([^"]*)"/i
+      # path routing
+      movie_name = Movie.find_by_title($1)
+      search_similar_movies_path(movie_name.title)
+
+  # when /find 
 
     else
       begin
